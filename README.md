@@ -17,3 +17,15 @@ curl -X POST http://localhost:8000/api/license/activate -H "Accept: application/
 ```
 curl -X POST http://localhost:8000/api/license/deactivate -H "Accept: application/json" -H "Content-Type: application/json" -d '{"serial_number":"XXXXXXXX"}'
 ```
+
+## Tests
+License activation and deactivation endpoints are tested for:
+
+- Valid inputs activating/deactivating licenses correctly
+- Validation errors
+- Handling of non-existent licenses
+- Proper HTTP status codes and JSON responses
+
+```
+php artisan test
+```
