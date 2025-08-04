@@ -11,7 +11,7 @@ class LicenseController extends Controller
     public function activate(Request $request): JsonResponse
     {
         $request->validate([
-            'key' => 'required|string',
+            'key' => 'required|string|size:39',
         ]);
 
         $license = License::where('key', $request->key)->first();
